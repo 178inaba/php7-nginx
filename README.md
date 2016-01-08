@@ -6,7 +6,7 @@ php7-nginx is php-fpm and nginx of docker
 
 | os | language | web server | fast cgi |
 |:--:|:--:|:--:|:--:|
-| centos | php7 | nginx | php-fpm |
+| centos | php7 | nginx(mainline) | php-fpm |
 
 ## docker command
 
