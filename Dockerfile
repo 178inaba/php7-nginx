@@ -15,6 +15,13 @@ COPY nginx.repo /etc/yum.repos.d/
 # install nginx
 RUN yum -y install nginx
 
+# port open
+EXPOSE 80 443
+
+# nginx log to stdout and stderr
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
+	ln -sf /dev/stderr /var/log/nginx/error.log
+
 # php7
 
-CMD ["bash"]
+CMD ["nginx", "-g", "daemon off;"]
