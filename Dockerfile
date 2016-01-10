@@ -10,8 +10,8 @@ RUN curl -fSL http://nginx.org/keys/$NGINX_KEY -o $NGINX_KEY && \
 	rm $NGINX_KEY
 
 # add epel and remi
-RUN yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
-	yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
+RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
+	yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
 	yum-config-manager --enable remi-php70
 
 # install nginx and php
