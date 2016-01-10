@@ -14,9 +14,9 @@ RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.n
 	yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
 	yum-config-manager --enable remi-php70
 
-# install nginx and php
+# install nginx, php, supervisor
 RUN yum -y update && \
-	yum -y install nginx php php-fpm
+	yum -y install nginx php php-fpm supervisor
 
 # nginx log to docker logs
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
@@ -25,4 +25,4 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
 # port open
 EXPOSE 80 443
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["supervisord"]
