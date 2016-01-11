@@ -21,8 +21,11 @@ RUN yum -y update && \
 # add conf of supervisor
 COPY supervisord.d/ /etc/supervisord.d/
 
-# overwrite conf of nginx
-COPY php-nginx.conf /etc/nginx/conf.d/default.conf
+# remove default conf of nginx
+RUN rm /etc/nginx/conf.d/default.conf
+
+# copy conf of nginx
+COPY php-nginx.conf /etc/nginx/conf.d/
 
 # port open
 EXPOSE 80 443
