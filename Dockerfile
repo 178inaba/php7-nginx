@@ -27,6 +27,9 @@ RUN rm /etc/nginx/conf.d/default.conf
 # copy conf of nginx
 COPY php-nginx.conf /etc/nginx/conf.d/
 
+# copy php source
+COPY php/ /usr/share/nginx/html/
+
 # port open
 EXPOSE 80 443
 
