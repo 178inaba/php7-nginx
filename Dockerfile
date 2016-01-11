@@ -18,9 +18,7 @@ RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.n
 RUN yum -y update && \
 	yum -y install nginx php php-fpm supervisor
 
-# nginx log to docker logs
-RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
-	ln -sf /dev/stderr /var/log/nginx/error.log
+COPY supervisord.d/ /etc/supervisord.d/
 
 # port open
 EXPOSE 80 443
