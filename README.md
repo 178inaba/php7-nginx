@@ -19,7 +19,7 @@ $ docker build --force-rm --no-cache -t img/php7-nginx .
 ### run
 
 ```bash
-$ docker run -d --name name-php7-nginx img/php7-nginx
+$ docker run -d -p 80:80 --name name-php7-nginx img/php7-nginx
 ```
 
 ## licence

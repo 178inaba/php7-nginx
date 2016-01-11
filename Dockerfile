@@ -18,7 +18,11 @@ RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.n
 RUN yum -y update && \
 	yum -y install nginx php php-fpm supervisor
 
+# add conf of supervisor
 COPY supervisord.d/ /etc/supervisord.d/
+
+# overwrite conf of nginx
+COPY php-nginx.conf /etc/nginx/conf.d/default.conf
 
 # port open
 EXPOSE 80 443
