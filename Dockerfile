@@ -37,4 +37,4 @@ RUN sed -i -e "s|listen = 127.0.0.1:9000|listen = /var/run/php-fpm/php-fpm.sock|
 # port open
 EXPOSE 80 443
 
-CMD ["supervisord"]
+CMD ["supervisord", "-c", "/etc/supervisord.conf"]
