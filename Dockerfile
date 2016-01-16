@@ -34,9 +34,6 @@ RUN sed -i -e "s|listen = 127.0.0.1:9000|listen = /var/run/php-fpm/php-fpm.sock|
 		   -e "s/;listen.group = nobody/listen.group = nginx/" \
 		   /etc/php-fpm.d/www.conf
 
-# foreground fpm
-RUN sed -i -e "s/daemonize = yes/daemonize = no/" /etc/php-fpm.conf
-
 # port open
 EXPOSE 80 443
 
