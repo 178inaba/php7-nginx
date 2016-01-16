@@ -28,6 +28,9 @@ RUN rm /etc/nginx/conf.d/default.conf
 # copy conf of nginx
 COPY php-nginx.conf /etc/nginx/conf.d/
 
+# use unix socket of fpm
+RUN sed -i -e "s|listen = 127.0.0.1:9000|listen = /var/run/php-fpm/php-fpm.sock|" www.conf
+
 # port open
 EXPOSE 80 443
 
