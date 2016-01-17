@@ -29,9 +29,11 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY php-nginx.conf /etc/nginx/conf.d/
 
 # use unix socket of fpm
-RUN sed -i -e "s|listen = 127.0.0.1:9000|listen = /var/run/php-fpm/php-fpm.sock|" \
+RUN sed -i -e "s/apache$/nginx/" \
+           -e "s|listen = 127.0.0.1:9000|listen = /var/run/php-fpm/php-fpm.sock|" \
            -e "s/;listen.owner = nobody/listen.owner = nginx/" \
            -e "s/;listen.group = nobody/listen.group = nginx/" \
+           -e "s/listen.allowed_clients/;listen.allowed_clients/" \
            /etc/php-fpm.d/www.conf
 
 # port open
