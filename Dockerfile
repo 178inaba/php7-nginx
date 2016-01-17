@@ -37,6 +37,6 @@ RUN sed -i -e "s/apache$/nginx/" \
            /etc/php-fpm.d/www.conf
 
 # port open
-EXPOSE 80 443
+EXPOSE 80
 
 CMD ["supervisord", "-c", "/etc/supervisord.conf"]
