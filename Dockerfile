@@ -23,11 +23,8 @@ RUN yum -y update && \
 # add conf of supervisor
 COPY supervisord.d/ /etc/supervisord.d/
 
-# remove default conf of nginx
-RUN rm /etc/nginx/conf.d/default.conf
-
 # copy conf of nginx
-COPY php-nginx.conf /etc/nginx/conf.d/
+COPY php-nginx.conf /etc/nginx/conf.d/default.conf
 
 # use unix socket of fpm
 RUN sed -i -e "s/apache$/nginx/" \
