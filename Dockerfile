@@ -1,4 +1,5 @@
 FROM centos:7
+MAINTAINER 178inaba <178inaba@users.noreply.github.com>
 
 # add nginx repo
 COPY nginx.repo /etc/yum.repos.d/
