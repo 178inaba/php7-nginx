@@ -22,6 +22,8 @@ $ docker build --force-rm --no-cache -t img/php7-nginx .
 $ docker run -d -p 80:80 -v $(pwd)/php:/var/www --name name-php7-nginx img/php7-nginx
 ```
 
+please be run by changing `$(pwd)/php` to your PHP web app directory.
+
 ## licence
 
 MIT
