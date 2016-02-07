@@ -2,13 +2,12 @@ FROM centos:7
 MAINTAINER 178inaba <178inaba@users.noreply.github.com>
 
 # add nginx repo
-COPY nginx.repo /etc/yum.repos.d/
-
-# set nginx key
-ENV NGINX_KEY nginx_signing.key
-RUN curl -fSL http://nginx.org/keys/$NGINX_KEY -o $NGINX_KEY && \
-    rpm --import $NGINX_KEY && \
-    rm $NGINX_KEY
+RUN echo -e '[nginx]\n\
+name=nginx repo\n\
+baseurl=http://nginx.org/packages/mainline/centos/7/$basearch/\n\
+gpgcheck=1\n\
+gpgkey=http://nginx.org/keys/nginx_signing.key\n\
+enabled=1' > /etc/yum.repos.d/nginx.repo
 
 # add epel and remi
 RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
