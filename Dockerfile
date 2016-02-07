@@ -20,7 +20,7 @@ RUN yum -y update && \
     yum clean all
 
 # add conf of supervisor
-COPY supervisord.d/ /etc/supervisord.d/
+COPY supervisor/ /etc/supervisord.d/
 
 # copy conf of nginx
 COPY nginx/php.conf /etc/nginx/conf.d/default.conf
