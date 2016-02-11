@@ -25,6 +25,9 @@ COPY supervisor/ /etc/supervisord.d/
 # copy conf of nginx
 COPY nginx/php.conf /etc/nginx/conf.d/default.conf
 
+# copy bin
+COPY bin/ /usr/local/sbin
+
 # use unix socket of fpm
 RUN sed -i -e "s/apache$/nginx/" \
            -e "s|listen = 127.0.0.1:9000|listen = /var/run/php-fpm/php-fpm.sock|" \
