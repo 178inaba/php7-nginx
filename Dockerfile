@@ -26,7 +26,7 @@ COPY etc/supervisor/ /etc/supervisord.d/
 COPY etc/nginx/php.conf /etc/nginx/conf.d/default.conf
 
 # copy bin
-COPY bin/ /usr/local/sbin
+COPY bin/ /usr/local/bin
 
 # use unix socket of fpm
 RUN sed -i -e "s/apache$/nginx/" \
