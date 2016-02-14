@@ -12,7 +12,7 @@ php7-nginx is php-fpm and nginx of docker
 
 - `NGINX_ROOT`
     - set the location where there is index.php.
-    - default: `/var/www`
+    - default:`/var/www`
 
 ## docker command
 
