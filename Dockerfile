@@ -14,9 +14,9 @@ RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.n
     yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
     yum-config-manager --enable remi-php70
 
-# install nginx, php, supervisor
+# install php, nginx, supervisor
 RUN yum -y update && \
-    yum -y install nginx php php-mbstring php-pdo php-fpm supervisor && \
+    yum -y install php php-mbstring php-pdo php-fpm nginx supervisor && \
     yum clean all
 
 # add conf of supervisor
