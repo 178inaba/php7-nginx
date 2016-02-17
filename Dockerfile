@@ -25,8 +25,9 @@ COPY etc/supervisor/ /etc/supervisord.d/
 # copy conf of nginx
 COPY etc/nginx/php.conf /etc/nginx/conf.d/default.conf
 
-# copy bin
+# copy bin and give permission to execute *.sh
 COPY bin/ /usr/local/bin
+RUN chmod u+x /usr/local/bin/*.sh
 
 # use unix socket of fpm
 RUN sed -i -e "s/apache$/nginx/" \
