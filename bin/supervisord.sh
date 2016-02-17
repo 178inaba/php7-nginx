@@ -1,6 +1,6 @@
 #!/bin/bash
 
-usermod -u ${NGINX_UID:-$(id -u nginx)} nginx
-groupmod -g ${NGINX_GID:-$(id -g nginx)} nginx
+usermod -u ${NGINX_UID:-$(id -u nginx)} -o nginx
+groupmod -g ${NGINX_GID:-$(id -g nginx)} -o nginx
 
 exec supervisord -c /etc/supervisord.conf
