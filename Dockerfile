@@ -19,8 +19,8 @@ RUN yum -y update && \
     yum -y install php php-mbstring php-pdo php-fpm nginx supervisor && \
     yum clean all
 
-# add conf of supervisor
-COPY etc/supervisor/ /etc/supervisord.d/
+# add conf of supervisord
+COPY etc/supervisord/ /etc/supervisord.d/
 
 # copy conf of nginx
 COPY etc/nginx/php.conf /etc/nginx/conf.d/default.conf
