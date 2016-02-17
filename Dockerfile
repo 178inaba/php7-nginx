@@ -40,4 +40,4 @@ RUN sed -i -e "s/apache$/nginx/" \
 # port open
 EXPOSE 80
 
-CMD ["supervisord", "-c", "/etc/supervisord.conf"]
+CMD ["supervisord.sh"]
