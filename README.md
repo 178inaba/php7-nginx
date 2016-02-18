@@ -46,6 +46,8 @@ $ docker run -d -p 8080:80 -v /path/to/lumen_app:/var/www -e NGINX_ROOT=/var/www
 
 ### [laravel](https://laravel.com/)
 
+laravel need write permission.
+
 ``` bash
 $ docker run -d -p 8080:80 -v /path/to/laravel_app:/var/www -e NGINX_ROOT=/var/www/public -e NGINX_UID=$(id -u) -e NGINX_GID=$(id -g) --name laravel_app img/php7-nginx
 ```
