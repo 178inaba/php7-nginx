@@ -15,6 +15,8 @@ php7-nginx is php-fpm and nginx of docker
     - default:`/var/www`
 - `NGINX_UID`
 - `NGINX_GID`
+    - id to be set to the container inside of nginx user/group (for permission).
+    - default:`docker exec name-php7-nginx id -u/-g nginx`
 
 ## docker command
 
