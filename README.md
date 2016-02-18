@@ -52,6 +52,8 @@ laravel need write permission.
 $ docker run -d -p 8080:80 -v /path/to/laravel_app:/var/www -e NGINX_ROOT=/var/www/public -e NGINX_UID=$(id -u) -e NGINX_GID=$(id -g) --name laravel_app img/php7-nginx
 ```
 
+please to replace the `$(id -u)` and `$(id -g)` to `$(docker-machine ssh default id -u)` and `$(docker-machine ssh default id -g)` when you are using the docker-machine.
+
 ## licence
 
 MIT
