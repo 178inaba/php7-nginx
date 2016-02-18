@@ -40,6 +40,12 @@ after access to `localhost:8080`(linux) or `$(docker-machine ip default):8080`(o
 $ docker run -d -p 8080:80 -v /path/to/lumen_app:/var/www -e NGINX_ROOT=/var/www/public --name lumen_app img/php7-nginx
 ```
 
+### [laravel](https://laravel.com/)
+
+``` bash
+$ docker run -d -p 8080:80 -v /path/to/laravel_app:/var/www -e NGINX_ROOT=/var/www/public -e NGINX_UID=$(id -u) -e NGINX_GID=$(id -g) --name laravel_app img/php7-nginx
+```
+
 ## licence
 
 MIT
