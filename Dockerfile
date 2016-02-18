@@ -26,7 +26,7 @@ COPY etc/supervisord/ /etc/supervisord.d/
 COPY etc/nginx/php.conf /etc/nginx/conf.d/default.conf
 
 # copy bin and give permission to execute *.sh
-COPY bin/ /usr/local/bin
+COPY bin/ /usr/local/bin/
 RUN chmod u+x /usr/local/bin/*.sh
 
 # use unix socket of fpm
