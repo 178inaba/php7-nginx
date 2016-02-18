@@ -16,7 +16,7 @@ php7-nginx is php-fpm and nginx of docker
 - `NGINX_UID`
 - `NGINX_GID`
     - id to be set to the container inside of nginx user/group (for permission).
-    - default:`docker exec name-php7-nginx id -u/-g nginx`
+    - default:`docker exec name-php7-nginx id -u/g nginx`
 
 ## docker command
 
@@ -52,7 +52,7 @@ laravel need write permission.
 $ docker run -d -p 8080:80 -v /path/to/laravel_app:/var/www -e NGINX_ROOT=/var/www/public -e NGINX_UID=$(id -u) -e NGINX_GID=$(id -g) --name laravel_app img/php7-nginx
 ```
 
-please to replace the `$(id -u)` and `$(id -g)` to `$(docker-machine ssh default id -u)` and `$(docker-machine ssh default id -g)` when you are using the docker-machine.
+please to replace the `id -u/g` to `docker-machine ssh default id -u/g` when you are using the docker-machine.
 
 ## licence
 
