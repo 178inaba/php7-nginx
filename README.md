@@ -8,7 +8,7 @@ php7-nginx is php-fpm and nginx of docker
 |:--:|:--:|:--:|:--:|
 | centos7 | php7 | nginx(mainline) | php-fpm |
 
-## environment variable
+## environment variables
 
 - `NGINX_ROOT`
     - set the location where there is index.php.
