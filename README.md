@@ -13,8 +13,7 @@ php7-nginx is php-fpm and nginx of docker
 - `NGINX_ROOT`
     - set the location where there is index.php.
     - default:`/var/www`
-- `NGINX_UID`
-- `NGINX_GID`
+- `NGINX_UID`/`NGINX_GID`
     - id to be set to the container inside of nginx user/group (for permission).
     - default:`docker exec name-php7-nginx id -u/g nginx`
 
