@@ -1,7 +1,7 @@
 FROM centos:7
 MAINTAINER 178inaba <178inaba@users.noreply.github.com>
 
-# add nginx repo
+# add repo
 COPY etc/yum/ /etc/yum.repos.d/
 
 # add epel and remi
