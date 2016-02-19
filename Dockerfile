@@ -30,11 +30,11 @@ COPY bin/ /usr/local/bin/
 RUN chmod u+x /usr/local/bin/*.sh
 
 # use unix socket of fpm
-RUN sed -i -e "s/apache$/nginx/" \
-           -e "s|listen = 127.0.0.1:9000|listen = /var/run/php-fpm/php-fpm.sock|" \
-           -e "s/;listen.owner = nobody/listen.owner = nginx/" \
-           -e "s/;listen.group = nobody/listen.group = nginx/" \
-           -e "s/listen.allowed_clients/;listen.allowed_clients/" \
+RUN sed -i -e 's/apache$/nginx/' \
+           -e 's|listen = 127.0.0.1:9000|listen = /var/run/php-fpm/php-fpm.sock|' \
+           -e 's/;listen.owner = nobody/listen.owner = nginx/' \
+           -e 's/;listen.group = nobody/listen.group = nginx/' \
+           -e 's/listen.allowed_clients/;listen.allowed_clients/' \
            /etc/php-fpm.d/www.conf
 
 # port open
