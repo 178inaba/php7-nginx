@@ -11,7 +11,7 @@ RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.n
 
 # install php, nginx, supervisor
 RUN yum -y update && \
-    yum -y install php php-mbstring php-pdo php-fpm nginx supervisor && \
+    yum -y install php php-intl php-mbstring php-mysqlnd php-pdo php-fpm nginx supervisor && \
     yum clean all
 
 # add conf of supervisord
