@@ -15,20 +15,20 @@ php7-nginx is php-fpm and nginx of docker
     - default:`/var/www`
 - `NGINX_UID`/`NGINX_GID`
     - id to be set to the container inside of nginx user/group (for permission).
-    - default:`$ docker exec name-php7-nginx id -u/g nginx`
+    - default:`$ docker exec 178inaba-php7-nginx id -u/g nginx`
 
 ## docker command
 
 ### build
 
 ```bash
-$ docker build --force-rm --no-cache -t img/php7-nginx .
+$ docker build --force-rm --no-cache -t 178inaba/php7-nginx .
 ```
 
 ### run
 
 ```bash
-$ docker run -d -p 8080:80 -v $(pwd)/php:/var/www --name name-php7-nginx img/php7-nginx
+$ docker run -d -p 8080:80 -v $(pwd)/php:/var/www --name 178inaba-php7-nginx 178inaba/php7-nginx
 ```
 
 please be run by changing `$(pwd)/php` to your php web app directory.
@@ -40,7 +40,7 @@ after access to `localhost:8080`(linux) or `$(docker-machine ip default):8080`(o
 ### [lumen](https://lumen.laravel.com/)
 
 ``` bash
-$ docker run -d -p 8080:80 -v /path/to/lumen_app:/var/www -e NGINX_ROOT=/var/www/public --name lumen_app img/php7-nginx
+$ docker run -d -p 8080:80 -v /path/to/lumen_app:/var/www -e NGINX_ROOT=/var/www/public --name lumen_app 178inaba/php7-nginx
 ```
 
 ### [laravel](https://laravel.com/)
@@ -48,7 +48,7 @@ $ docker run -d -p 8080:80 -v /path/to/lumen_app:/var/www -e NGINX_ROOT=/var/www
 laravel need write permission.
 
 ``` bash
-$ docker run -d -p 8080:80 -v /path/to/laravel_app:/var/www -e NGINX_ROOT=/var/www/public -e NGINX_UID=$(id -u) -e NGINX_GID=$(id -g) --name laravel_app img/php7-nginx
+$ docker run -d -p 8080:80 -v /path/to/laravel_app:/var/www -e NGINX_ROOT=/var/www/public -e NGINX_UID=$(id -u) -e NGINX_GID=$(id -g) --name laravel_app 178inaba/php7-nginx
 ```
 
 please use by replacing the `id -u/g` to `docker-machine ssh default id -u/g` if you are using a docker-machine.
@@ -72,7 +72,7 @@ $ sed -i -e "$(grep -n "'Datasources' => \[" config/app.php | sed -e "s/\(.*\):.
 
 # run container
 $ cd /path/to/php7-nginx
-$ docker run -d -p 8080:80 -v /path/to/cakephp_app:/var/www -e NGINX_ROOT=/var/www/webroot -e NGINX_UID=$(id -u) -e NGINX_GID=$(id -g) --link maria --name cakephp_app img/php7-nginx
+$ docker run -d -p 8080:80 -v /path/to/cakephp_app:/var/www -e NGINX_ROOT=/var/www/webroot -e NGINX_UID=$(id -u) -e NGINX_GID=$(id -g) --link maria --name cakephp_app 178inaba/php7-nginx
 ```
 
 ## licence
