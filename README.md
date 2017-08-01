@@ -75,6 +75,10 @@ $ cd /path/to/php7-nginx
 $ docker run -d -p 8080:80 -v /path/to/cakephp_app:/var/www -e NGINX_ROOT=/var/www/webroot -e NGINX_UID=$(id -u) -e NGINX_GID=$(id -g) --link maria --name cakephp_app 178inaba/php7-nginx
 ```
 
-## licence
+## License
 
-MIT
+[MIT](LICENSE)
+
+## Author
+
+[178inaba](https://github.com/178inaba)
