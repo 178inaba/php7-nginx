@@ -1,6 +1,6 @@
 # php7-nginx
 
-php7-nginx is php-fpm and nginx of docker
+php7-nginx is php-fpm and nginx of docker.
 
 ## Spec
 
