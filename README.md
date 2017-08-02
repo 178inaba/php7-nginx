@@ -2,13 +2,13 @@
 
 php7-nginx is php-fpm and nginx of docker
 
-## spec
+## Spec
 
 | os | language | web server | fast cgi |
 |:--:|:--:|:--:|:--:|
 | centos7 | php7 | nginx(mainline) | php-fpm |
 
-## environment variables
+## Environment Variables
 
 - `NGINX_ROOT`
     - set the location where there is index.php.
@@ -17,15 +17,15 @@ php7-nginx is php-fpm and nginx of docker
     - id to be set to the container inside of nginx user/group (for permission).
     - default:`$ docker exec 178inaba-php7-nginx id -u/g nginx`
 
-## docker command
+## Docker Commands
 
-### build
+### Build
 
 ```bash
 $ docker build --force-rm --no-cache -t 178inaba/php7-nginx .
 ```
 
-### run
+### Run
 
 ```bash
 $ docker run -d -p 8080:80 -v $(pwd)/php:/var/www --name 178inaba-php7-nginx 178inaba/php7-nginx
@@ -35,15 +35,15 @@ please be run by changing `$(pwd)/php` to your php web app directory.
 
 after access to `localhost:8080`(linux) or `$(docker-machine ip default):8080`(os x).
 
-## how to use in framework
+## How To Use In Framework
 
-### [lumen](https://lumen.laravel.com/)
+### [Lumen](https://lumen.laravel.com/)
 
 ``` bash
 $ docker run -d -p 8080:80 -v /path/to/lumen_app:/var/www -e NGINX_ROOT=/var/www/public --name lumen_app 178inaba/php7-nginx
 ```
 
-### [laravel](https://laravel.com/)
+### [Laravel](https://laravel.com/)
 
 laravel need write permission.
 
@@ -53,7 +53,7 @@ $ docker run -d -p 8080:80 -v /path/to/laravel_app:/var/www -e NGINX_ROOT=/var/w
 
 please use by replacing the `id -u/g` to `docker-machine ssh default id -u/g` if you are using a docker-machine.
 
-### [cakephp](http://cakephp.org/)
+### [CakePHP](http://cakephp.org/)
 
 ``` bash
 # run db container
