@@ -37,6 +37,12 @@ after access to `localhost:8080`(linux) or `$(docker-machine ip default):8080`(o
 
 ## How To Use In Framework
 
+### [CodeIgniter](https://codeigniter.com/)
+
+``` bash
+$ docker run -d -p 8080:80 -v $(pwd):/var/www --name ci_app 178inaba/php7-nginx
+```
+
 ### [Lumen](https://lumen.laravel.com/)
 
 ``` bash
