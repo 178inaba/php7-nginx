@@ -21,13 +21,13 @@ php7-nginx is php-fpm and nginx of Docker.
 
 ### Build
 
-```bash
+```console
 $ docker build --force-rm --no-cache -t 178inaba/php7-nginx .
 ```
 
 ### Run
 
-```bash
+```console
 $ docker run -d -p 8080:80 -v $(pwd)/php:/var/www --name 178inaba-php7-nginx 178inaba/php7-nginx
 ```
 
@@ -39,13 +39,13 @@ after access to `localhost:8080`(linux) or `$(docker-machine ip default):8080`(o
 
 ### [CodeIgniter](https://codeigniter.com/)
 
-``` bash
+```console
 $ docker run -d -p 8080:80 -v $(pwd):/var/www --name ci_app 178inaba/php7-nginx
 ```
 
 ### [Lumen](https://lumen.laravel.com/)
 
-``` bash
+```console
 $ docker run -d -p 8080:80 -v /path/to/lumen_app:/var/www -e NGINX_ROOT=/var/www/public --name lumen_app 178inaba/php7-nginx
 ```
 
@@ -53,7 +53,7 @@ $ docker run -d -p 8080:80 -v /path/to/lumen_app:/var/www -e NGINX_ROOT=/var/www
 
 laravel need write permission.
 
-``` bash
+```console
 $ docker run -d -p 8080:80 -v /path/to/laravel_app:/var/www -e NGINX_ROOT=/var/www/public -e NGINX_UID=$(id -u) -e NGINX_GID=$(id -g) --name laravel_app 178inaba/php7-nginx
 ```
 
@@ -61,7 +61,7 @@ please use by replacing the `id -u/g` to `docker-machine ssh default id -u/g` if
 
 ### [CakePHP](http://cakephp.org/)
 
-``` bash
+```console
 # run db container
 $ docker run -d -p 3366:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes --name maria mariadb:10
 
